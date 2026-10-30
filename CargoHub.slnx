@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CargoHub.Api/CargoHub.Api.csproj" />
+  <Project Path="CargoHub.Tests/CargoHub.Tests.csproj" />
+</Solution>
