@@ -22,6 +22,37 @@ namespace CargoHub.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("CargoHub.Api.Models.Inventory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Location_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity_Allocate")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity_Expected")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity_On_Hand")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity_Ordered")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Inventory");
+                });
+
             modelBuilder.Entity("CargoHub.Api.Models.Warehouse", b =>
                 {
                     b.Property<int>("Id")

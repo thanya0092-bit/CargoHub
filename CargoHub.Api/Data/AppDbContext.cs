@@ -5,4 +5,5 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     public DbSet<Warehouse> Warehouses => Set<Warehouse>();
+    public DbSet<Inventory> Inventory => Set<Inventory>();
 }
