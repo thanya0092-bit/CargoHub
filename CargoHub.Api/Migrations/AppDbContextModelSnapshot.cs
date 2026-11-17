@@ -30,6 +30,12 @@ namespace CargoHub.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Item_Id")
+                        .HasColumnType("integer");
+
                     b.Property<int>("Location_Id")
                         .HasColumnType("integer");
 
@@ -45,7 +51,7 @@ namespace CargoHub.Api.Migrations
                     b.Property<int>("Quantity_Ordered")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("created_at")
+                    b.Property<DateTime>("Updated_At")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");

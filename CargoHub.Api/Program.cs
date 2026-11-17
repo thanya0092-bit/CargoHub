@@ -14,6 +14,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 
 builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
 
 
 builder.Services.AddControllers();

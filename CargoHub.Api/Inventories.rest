@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:5131
+
+### Get all inventories
+GET {{baseUrl}}/api/inventories
+
+### Get one product
+GET {{baseUrl}}/api/inventories/1
+
+### Create a product
+POST {{baseUrl}}/api/inventories
+Content-Type: application/json
+
+{
+  "Item_Id": 22,
+  "Location_Id": 90,
+  "Quantity_On_Hand": 5000,
+  "Quantity_Expected":1000,
+  "Quantity_Ordered": 2000,
+  "Quantity_Allocate": 1000
+}
+
+### Delete a product
+DELETE {{baseUrl}}/api/inventories/1
