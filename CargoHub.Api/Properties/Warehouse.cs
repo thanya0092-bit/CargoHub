@@ -5,7 +5,7 @@ public class Warehouse : IEntity
     public int Id { get; set; }
     public string Code { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-    public string Adress { get; set; } = string.Empty;
+    public string Address { get; set; } = string.Empty;
     public string City { get; set; } = string.Empty;
     public string Zip_Code { get; set; } = string.Empty;
     public string Province { get; set; } = string.Empty;
