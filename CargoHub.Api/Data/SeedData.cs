@@ -35,9 +35,9 @@ public static class SeedData
         }
 
         // 2. Inventory
-        if (!await context.Inventory.AnyAsync())
+        if (!await context.Inventories.AnyAsync())
         {
-            context.Inventory.AddRange(
+            context.Inventories.AddRange(
                 new Inventory
                 {
                     Item_Id = 10,
@@ -62,6 +62,29 @@ public static class SeedData
                 }
             );
 
+            await context.SaveChangesAsync();
+        }
+
+        // 3. Shipment
+        if (!await context.Shipments.AnyAsync())
+        {
+            context.Shipments.AddRange(
+                new Shipment
+                {
+                    
+                    Reference = "SHP-000001",
+                    Order_Id = 1,
+                    Shipment_Date = new DateTime(2025, 3, 5, 18, 51, 53, DateTimeKind.Utc),
+                    Shipment_Type = "Outgoing",
+                    Shipment_Status = "Transit",
+                    Carrier_Name = "GLS",
+                    Shipping_Method = "Standard",
+                    Payment_Type = "Automated",
+                    Created_At = new DateTime(2025, 3, 5, 18, 51, 53, DateTimeKind.Utc),
+                    Updated_At = new DateTime(2025, 3, 6, 21, 12, 23, DateTimeKind.Utc)
+                }
+            );
+            
             await context.SaveChangesAsync();
         }
     }

@@ -56,7 +56,53 @@ namespace CargoHub.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inventory");
+                    b.ToTable("Inventories");
+                });
+
+            modelBuilder.Entity("CargoHub.Api.Models.Shipment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Carrier_Name")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Order_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Payment_Type")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Shipment_Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Shipment_Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Shipment_Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Shipping_Method")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Updated_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Shipments");
                 });
 
             modelBuilder.Entity("CargoHub.Api.Models.Warehouse", b =>
