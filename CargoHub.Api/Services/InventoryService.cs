@@ -34,9 +34,6 @@ public class InventoryService : IInventoryService
             Location_Id = dto.Location_Id,
             Quantity_On_Hand = dto.Quantity_On_Hand,
             Quantity_Expected = dto.Quantity_Expected,
-            Quantity_Ordered = dto.Quantity_Ordered,
-            Quantity_Allocate = dto.Quantity_Allocate,
-            Created_At = now,
             Updated_At = now
         };
 
@@ -48,10 +45,10 @@ public class InventoryService : IInventoryService
 
     public async Task<bool> DeleteAsync(int id)
     {
-        var product = await _inventories.GetByIdAsync(id);
-        if (product is null) return false;
+        var inventory = await _inventories.GetByIdAsync(id);
+        if (inventory is null) return false;
 
-        _inventories.Delete(product);
+        _inventories.Delete(inventory);
         await _inventories.SaveChangesAsync();
 
         return true;

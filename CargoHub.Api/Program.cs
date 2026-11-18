@@ -17,7 +17,7 @@ builder.Services.AddScoped<IWarehouseService, WarehouseService>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<IShipmentService, ShipmentService>();
 builder.Services.AddScoped<IShipmentService, ShipmentService>();
-
+builder.Services.AddScoped<ILocationService, LocationService>();
 
 builder.Services.AddControllers();
 

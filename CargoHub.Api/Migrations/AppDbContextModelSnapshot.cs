@@ -59,6 +59,36 @@ namespace CargoHub.Api.Migrations
                     b.ToTable("Inventories");
                 });
 
+            modelBuilder.Entity("CargoHub.Api.Models.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Updated_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Warehouse_Id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
+                });
+
             modelBuilder.Entity("CargoHub.Api.Models.Shipment", b =>
                 {
                     b.Property<int>("Id")

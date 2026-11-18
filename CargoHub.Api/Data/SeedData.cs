@@ -84,7 +84,24 @@ public static class SeedData
                     Updated_At = new DateTime(2025, 3, 6, 21, 12, 23, DateTimeKind.Utc)
                 }
             );
-            
+    
+            await context.SaveChangesAsync();
+        }
+
+        //4.Location
+        if (!await context.Locations.AnyAsync())
+        {
+            context.Locations.AddRange(
+                new Location
+                {
+                    Warehouse_Id = 1,
+                    Code = "VGH-AMB-B12-R6-B7",
+                    Name = "Zone B Aisle 12 Rack 6 Bin 7",
+                    Created_At =  new DateTime(2024, 12, 8, 10, 37, 19, DateTimeKind.Utc),
+                    Updated_At = new DateTime(2024, 12, 30, 6, 59, 18, DateTimeKind.Utc)
+                }
+            );
+    
             await context.SaveChangesAsync();
         }
     }

@@ -7,4 +7,5 @@ public class AppDbContext : DbContext
     public DbSet<Warehouse> Warehouses => Set<Warehouse>();
     public DbSet<Inventory> Inventories => Set<Inventory>();
     public DbSet<Shipment> Shipments => Set<Shipment>();
+    public DbSet<Location> Locations => Set<Location>();
 }
