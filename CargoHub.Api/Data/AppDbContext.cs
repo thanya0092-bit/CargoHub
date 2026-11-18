@@ -1,5 +1,6 @@
 using CargoHub.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 namespace CargoHub.Api.Data;
 public class AppDbContext : DbContext
 {
@@ -8,4 +9,7 @@ public class AppDbContext : DbContext
     public DbSet<Inventory> Inventories => Set<Inventory>();
     public DbSet<Shipment> Shipments => Set<Shipment>();
     public DbSet<Location> Locations => Set<Location>();
+    public DbSet<Item> Items => Set<Item>();
+    public DbSet<ItemGroup> ItemGroups => Set<ItemGroup>();
+    public DbSet<ItemLine> ItemLines => Set<ItemLine>();
 }
