@@ -22,6 +22,61 @@ namespace CargoHub.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("CargoHub.Api.Models.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Contact_Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Contact_Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Contact_Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Updated_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Zip_Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clients");
+                });
+
             modelBuilder.Entity("CargoHub.Api.Models.Inventory", b =>
                 {
                     b.Property<int>("Id")
@@ -213,6 +268,58 @@ namespace CargoHub.Api.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("CargoHub.Api.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Bill_To_Client_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Client_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Customer_Po_Number")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Order_Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Order_Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Request_Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Ship_To_Client_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Shipping_Notes")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Updated_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Warehouse_Id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
             modelBuilder.Entity("CargoHub.Api.Models.Shipment", b =>
                 {
                     b.Property<int>("Id")
@@ -257,6 +364,65 @@ namespace CargoHub.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Shipments");
+                });
+
+            modelBuilder.Entity("CargoHub.Api.Models.Supplier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Contact_Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone_Number")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Updated_At")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Zip_Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("CargoHub.Api.Models.Warehouse", b =>

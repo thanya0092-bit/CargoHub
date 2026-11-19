@@ -12,4 +12,7 @@ public class AppDbContext : DbContext
     public DbSet<Item> Items => Set<Item>();
     public DbSet<ItemGroup> ItemGroups => Set<ItemGroup>();
     public DbSet<ItemLine> ItemLines => Set<ItemLine>();
+    public DbSet<Client> Clients => Set<Client>();
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
 }

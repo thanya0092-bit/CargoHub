@@ -21,6 +21,9 @@ builder.Services.AddScoped<ILocationService, LocationService>();
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<IItemGroupService, ItemGroupService>();
 builder.Services.AddScoped<IItemLineService, ItemLineService>();
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IOrdersService, OrdersService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 
 builder.Services.AddControllers();
