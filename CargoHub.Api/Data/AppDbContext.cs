@@ -1,5 +1,6 @@
 using CargoHub.Api.Models;
 using Microsoft.EntityFrameworkCore;
+
 namespace CargoHub.Api.Data;
 public class AppDbContext : DbContext
 {
