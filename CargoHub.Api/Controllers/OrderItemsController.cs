@@ -25,7 +25,7 @@ public class OrderItemsController : ControllerBase
         var orderItem = await _orderItems.GetByIdAsync(id);
         return orderItem is null ? NotFound() : Ok(orderItem);
     }
-    
+
     [HttpPost]
     public async Task<ActionResult<OrderItemDto>> Create(CreateOrderItemDto dto)
     {

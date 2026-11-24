@@ -1,4 +1,3 @@
-
 namespace CargoHub.Api.Dtos;
 
 public record SupplierDto

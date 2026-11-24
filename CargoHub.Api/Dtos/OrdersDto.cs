@@ -26,4 +26,4 @@ public record CreateOrdersDto
     public int WarehouseId { get; init; }
     public int ShipToClientId { get; init; }
     public int BillToClientId { get; init; }
-} 
+}

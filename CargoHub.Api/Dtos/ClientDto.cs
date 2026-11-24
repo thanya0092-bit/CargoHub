@@ -13,8 +13,8 @@ public record ClientDto
     public string ContactEmail { get; init; } = string.Empty;
     public DateTime CreatedAt { get; init; }
     public DateTime UpdatedAt { get; init; }
-
 }
+
 public record CreateClientDto
 {
     public string Name { get; init; } = string.Empty;
