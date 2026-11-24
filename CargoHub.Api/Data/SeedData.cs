@@ -119,5 +119,69 @@ public static class SeedData
     
             await context.SaveChangesAsync();
         }
+
+        // Item
+        if (!await context.Items.AnyAsync())
+        {
+            context.Items.AddRange(
+                new Item
+                {
+                    Id = 585,
+                    Code = "ITM-000585",
+                    Description = "Jumbo Klassiek Gehakt 1500 g",
+                    Barcode = "6815724500002",
+                    ModelNumber = "OH-14086",
+                    CommodityCode = 1406129,
+                    UnitWeight = 1.5,
+                    ItemLineId = 12,
+                    ItemGroupId = 1,
+                    ItemTypeId = 1,
+                    MinPurchaseQty = 1,
+                    CaseSize = 6,
+                    PackagingType = "Case",
+                    OrderMultiple = 1,
+                    SupplierId = 17,
+                    SupplierSku = "SKU-2509522",
+                    CreatedAt = new DateTime(2024, 4, 20, 23, 17, 54, DateTimeKind.Utc),
+                    UpdatedAt = new DateTime(2024, 5, 19, 10, 51, 7, DateTimeKind.Utc)
+                }
+            );
+
+            await context.SaveChangesAsync();
+        }
+
+        // ItemLine
+        if (!await context.ItemLines.AnyAsync())
+        {
+            context.ItemLines.AddRange(
+                new ItemLine
+                {
+                    Id = 1,
+                    Name = "Aardappelen, groente en fruit",
+                    Description = "Jumbo assortment line: Aardappelen, groente en fruit",
+                    CreatedAt = new DateTime(2025, 8, 1, 15, 30, 26, DateTimeKind.Utc),
+                    UpdatedAt = new DateTime(2025, 8, 23, 22, 38, 58, DateTimeKind.Utc)
+                }
+            );
+
+            await context.SaveChangesAsync();
+        }
+
+        // ItemGroup
+        if (!await context.ItemGroups.AnyAsync())
+        {
+            context.ItemGroups.AddRange(
+                new ItemGroup
+                {
+                    Id = 1,
+                    Name = "Vers",
+                    Description = "Temperature/handling regime: Vers",
+                    CreatedAt = new DateTime(2025, 8, 1, 15, 30, 26, DateTimeKind.Utc),
+                    UpdatedAt = new DateTime(2025, 8, 15, 20, 20, 03, DateTimeKind.Utc)
+                }
+            );
+
+            await context.SaveChangesAsync();
+        }
     }
 }

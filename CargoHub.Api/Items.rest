@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:5131
+
+### Get all items
+GET {{baseUrl}}/api/items
+
+### Get one item
+GET {{baseUrl}}/api/items/585
