@@ -126,57 +126,57 @@ namespace CargoHub.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Case_Size")
+                    b.Property<int>("CaseSize")
                         .HasColumnType("integer");
 
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Commodity_Code")
+                    b.Property<int>("CommodityCode")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("Created_At")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Item_Group_Id")
+                    b.Property<int>("ItemGroupId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Item_Line_Id")
+                    b.Property<int>("ItemLineId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Item_Type_Id")
+                    b.Property<int>("ItemTypeId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Min_Purchase_Qty")
+                    b.Property<int>("MinPurchaseQty")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Model_Number")
+                    b.Property<string>("ModelNumber")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Order_Multiple")
+                    b.Property<int>("OrderMultiple")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Packaging_Type")
+                    b.Property<string>("PackagingType")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Supplier_Id")
+                    b.Property<int>("SupplierId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Supplier_Sku")
+                    b.Property<string>("SupplierSku")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Unit_Weight")
-                        .HasColumnType("integer");
+                    b.Property<double>("UnitWeight")
+                        .HasColumnType("double precision");
 
-                    b.Property<DateTime>("Updated_At")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -192,7 +192,7 @@ namespace CargoHub.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Created_At")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
@@ -203,7 +203,7 @@ namespace CargoHub.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("Updated_At")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -219,7 +219,7 @@ namespace CargoHub.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Created_At")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
@@ -230,7 +230,7 @@ namespace CargoHub.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("Updated_At")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
