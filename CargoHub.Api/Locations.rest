@@ -4,4 +4,18 @@
 GET {{baseUrl}}/api/locations
 
 ### Get one locations
-GET {{baseUrl}}/api/locations/1
+GET {{baseUrl}}/api/locations/3
+
+### Create a locations
+POST {{baseUrl}}/api/locations
+Content-Type: application/json
+
+{
+  "Warehouse_Id": 9,
+  "Code": "123 Main St",
+  "Name": "Location 1"
+}
+
+### Delete a locations
+DELETE {{baseUrl}}/api/locations/3
+

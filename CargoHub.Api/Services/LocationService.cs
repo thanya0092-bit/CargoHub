@@ -27,7 +27,6 @@ public class LocationService : ILocationService
 
     public async Task<LocationDto> CreateAsync(CreateLocationDto dto)
     {
-        var now = DateTime.UtcNow;
         var location = new Location
         {
             Warehouse_Id = dto.Warehouse_Id,

@@ -25,6 +25,38 @@ public class ShipmentService : IShipmentService
         return shipment is null ? null : ToDto(shipment);
     }
 
+    public async Task<ShipmentDto> CreateAsync(CreateShipmentDto shipmentDto)
+    {
+        var now = DateTime.UtcNow;
+        var shipment = new Shipment
+        {
+            Order_Id = shipmentDto.Order_Id,
+            Shipment_Date = shipmentDto.Shipment_Date,
+            Shipment_Type = shipmentDto.Shipment_Type,
+            Carrier_Name = shipmentDto.Carrier_Name,
+            Shipping_Method = shipmentDto.Shipping_Method,
+            Payment_Type = shipmentDto.Payment_Type,
+            Created_At = now,
+            Updated_At = now
+        };
+
+        _shipments.Add(shipment);
+        await _shipments.SaveChangesAsync();
+
+        return ToDto(shipment);
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var shipment = await _shipments.GetByIdAsync(id);
+        if (shipment is null) return false;
+
+        _shipments.Delete(shipment);
+        await _shipments.SaveChangesAsync();
+
+        return true;
+    }
+
     private static ShipmentDto ToDto(Shipment shipment) => new()
     {
         Id = shipment.Id,

@@ -6,9 +6,9 @@ public record OrdersDto
     public int Client_Id { get; init; }
     public DateTime Order_Date { get; init; }
     public DateTime Request_Date { get; init; }
-    public string Reference { get; init; }
-    public string Customer_Po_Number { get; init; }
-    public string Order_Status { get; init; }
+    public string Reference { get; init; } = string.Empty;
+    public string Customer_Po_Number { get; init; } = string.Empty;
+    public string Order_Status { get; init; } = string.Empty;
     public string? Shipping_Notes { get; init; }
     public int Warehouse_Id { get; init; }
     public int Ship_To_Client_Id { get; init; }
@@ -21,7 +21,7 @@ public record CreateOrdersDto
 {
     public int Client_Id { get; init; }
     public DateTime Request_Date { get; init; }
-    public string Customer_Po_Number { get; init; }
+    public string Customer_Po_Number { get; init; } = string.Empty;
     public string? Shipping_Notes { get; init; }
     public int Warehouse_Id { get; init; }
     public int Ship_To_Client_Id { get; init; }

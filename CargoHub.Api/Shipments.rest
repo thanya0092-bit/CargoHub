@@ -5,3 +5,19 @@ GET {{baseUrl}}/api/shipments
 
 ### Get one locations
 GET {{baseUrl}}/api/shipments/1
+
+### Create a shipment item
+POST {{baseUrl}}/api/shipments
+Content-Type: application/json
+
+{
+    "Order_Id": 1,
+    "Shipment_Date": "2024-06-01T00:00:00Z",
+    "Shipment_Type": "Standard",
+    "Carrier_Name": "FedEx",
+    "Shipping_Method": "Ground",
+    "Payment_Type": "Prepaid"
+}
+
+### Delete a shipment item
+DELETE {{baseUrl}}/api/shipments/2

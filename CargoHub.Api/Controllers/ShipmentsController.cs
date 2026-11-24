@@ -25,4 +25,19 @@ public class ShipmentsController : ControllerBase
         var shipment = await _shipments.GetByIdAsync(id);
         return shipment is null ? NotFound() : Ok(shipment);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<ShipmentDto>> Create(CreateShipmentDto dto)
+    {
+        var created = await _shipments.CreateAsync(dto);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    }
+    
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+        var deleted = await _shipments.DeleteAsync(id);
+        return deleted ? NoContent() : NotFound();
+    }
 }

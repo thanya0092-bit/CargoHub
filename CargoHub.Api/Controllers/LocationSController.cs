@@ -25,4 +25,18 @@ public class LocationsController : ControllerBase
         var location = await _locations.GetByIdAsync(id);
         return location is null ? NotFound() : Ok(location);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<LocationDto>> Create(CreateLocationDto dto)
+    {
+        var created = await _locations.CreateAsync(dto);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var deleted = await _locations.DeleteAsync(id);
+        return deleted ? NoContent() : NotFound();
+    }
 }
