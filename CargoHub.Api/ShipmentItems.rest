@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:5131
+
+### Get all shipment items
+GET {{baseUrl}}/api/shipmentItems
+
+### Get one shipment item
+GET {{baseUrl}}/api/shipmentItems/1
+
+### Create a shipment item
+POST {{baseUrl}}/api/shipmentItems
+Content-Type: application/json
+
+{
+  "Shipment_Id" : 2,
+  "Item_Id" : 9,
+  "Amout" : 20
+}
+
+### Delete a hipment item
+DELETE {{baseUrl}}/api/shipmentItems/2

@@ -10,7 +10,7 @@ public static class SeedData
         using var scope = app.Services.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-        // 1. Warehouses
+        //Warehouses
         if (!await context.Warehouses.AnyAsync())
         {
             context.Warehouses.AddRange(
@@ -34,7 +34,7 @@ public static class SeedData
             await context.SaveChangesAsync();
         }
 
-        // 2. Inventory
+        //Inventory
         if (!await context.Inventories.AnyAsync())
         {
             context.Inventories.AddRange(
@@ -65,7 +65,7 @@ public static class SeedData
             await context.SaveChangesAsync();
         }
 
-        // 3. Shipment
+        // Shipment
         if (!await context.Shipments.AnyAsync())
         {
             context.Shipments.AddRange(
@@ -88,7 +88,7 @@ public static class SeedData
             await context.SaveChangesAsync();
         }
 
-        //4.Location
+        //Location
         if (!await context.Locations.AnyAsync())
         {
             context.Locations.AddRange(
@@ -104,5 +104,20 @@ public static class SeedData
     
             await context.SaveChangesAsync();
         }
+
+        //Shipment_Item
+        if (!await context.ShipmentItems.AnyAsync())
+        {
+            context.ShipmentItems.AddRange(
+                new ShipmentItem
+                {
+                    Shipment_Id = 1,
+                    Item_Id = 99,
+                    Amount = 100
+                }
+            );
+    
+            await context.SaveChangesAsync();
+        } 
     }
 }

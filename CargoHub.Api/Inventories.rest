@@ -3,10 +3,10 @@
 ### Get all inventories
 GET {{baseUrl}}/api/inventories
 
-### Get one product
-GET {{baseUrl}}/api/inventories/1
+### Get one inventories
+GET {{baseUrl}}/api/inventories/2
 
-### Create a product
+### Create a inventories
 POST {{baseUrl}}/api/inventories
 Content-Type: application/json
 
@@ -19,5 +19,5 @@ Content-Type: application/json
   "Quantity_Allocate": 1000
 }
 
-### Delete a product
+### Delete a inventories
 DELETE {{baseUrl}}/api/inventories/1
