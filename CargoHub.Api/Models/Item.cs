@@ -6,18 +6,24 @@ public class Item : IEntity
     public string Code { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public string Barcode { get; set; } = string.Empty;
-    public string Model_Number { get; set; } = string.Empty;
-    public int Commodity_Code { get; set; }
-    public int Unit_Weight { get; set; }
-    public int Item_Line_Id { get; set; }
-    public int Item_Group_Id { get; set; }
-    public int Item_Type_Id { get; set; }
-    public int Min_Purchase_Qty { get; set; }
-    public int Case_Size { get; set; }
-    public string Packaging_Type { get; set; } = string.Empty;
-    public int Order_Multiple { get; set; }
-    public int Supplier_Id { get; set; }
-    public string Supplier_Sku { get; set; } = string.Empty;
-    public DateTime Created_At { get; set; }
-    public DateTime Updated_At { get; set; }
+    public string ModelNumber { get; set; } = string.Empty;
+    public int CommodityCode { get; set; }
+    public double UnitWeight { get; set; }
+    public int MinPurchaseQty { get; set; }
+    public int CaseSize { get; set; }
+    public string PackagingType { get; set; } = string.Empty;
+    public int OrderMultiple { get; set; }
+    public string SupplierSku { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
+
+    public int ItemLineId { get; set; }
+    public int ItemGroupId { get; set; }
+    public int ItemTypeId { get; set; }
+    public int SupplierId { get; set; }
+
+    public ItemLine ItemLine { get; set; } = null!;
+    public ItemGroup ItemGroup { get; set; } = null!;
+    // public ItemType ItemType { get; set; } = null!;
+    public Supplier Supplier { get; set; } = null!;
 }

@@ -30,7 +30,7 @@ public class ItemLineService : IItemLineService
         Id = itemLine.Id,
         Name = itemLine.Name,
         Description = itemLine.Description,
-        Created_At = itemLine.Created_At,
-        Updated_At = itemLine.Updated_At
+        CreatedAt = itemLine.CreatedAt,
+        UpdatedAt = itemLine.UpdatedAt
     };
 }

@@ -30,7 +30,7 @@ public class ItemGroupService : IItemGroupService
         Id = itemGroup.Id,
         Name = itemGroup.Name,
         Description = itemGroup.Description,
-        Created_At = itemGroup.Created_At,
-        Updated_At = itemGroup.Updated_At
+        CreatedAt = itemGroup.CreatedAt,
+        UpdatedAt = itemGroup.UpdatedAt
     };
 }
