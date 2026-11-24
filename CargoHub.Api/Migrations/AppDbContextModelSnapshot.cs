@@ -320,6 +320,31 @@ namespace CargoHub.Api.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("CargoHub.Api.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Item_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Order_Id")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Unit_Price")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("CargoHub.Api.Models.Shipment", b =>
                 {
                     b.Property<int>("Id")

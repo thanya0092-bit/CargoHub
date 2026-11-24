@@ -15,4 +15,5 @@ public class AppDbContext : DbContext
     public DbSet<Client> Clients => Set<Client>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<OrderItem> OrderItems => Set<OrderItem>();
 }
