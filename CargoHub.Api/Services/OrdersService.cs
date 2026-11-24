@@ -30,21 +30,24 @@ public class OrdersService : IOrdersService
         var now = DateTime.UtcNow;
         var order = new Order
         {
-            Client_Id = dto.Client_Id,
-            Order_Date = now,
-            Request_Date = dto.Request_Date,
-            Reference = $"ORD-000001",
-            Customer_Po_Number = dto.Customer_Po_Number,
-            Order_Status = "Pending",
-            Shipping_Notes = dto.Shipping_Notes,
-            Warehouse_Id = dto.Warehouse_Id,
-            Ship_To_Client_Id = dto.Ship_To_Client_Id,
-            Bill_To_Client_Id = dto.Bill_To_Client_Id,
-            Created_At = now,
-            Updated_At = now
+            ClientId = dto.ClientId,
+            OrderDate = now,
+            RequestDate = dto.RequestDate,
+            Reference = string.Empty,
+            CustomerPoNumber = dto.CustomerPoNumber,
+            OrderStatus = "Pending",
+            ShippingNotes = dto.ShippingNotes,
+            WarehouseId = dto.WarehouseId,
+            ShipToClientId = dto.ShipToClientId,
+            BillToClientId = dto.BillToClientId,
+            CreatedAt = now,
+            UpdatedAt = now
         };
 
         _orders.Add(order);
+        await _orders.SaveChangesAsync();
+
+        order.Reference = $"SUP-{order.Id:D6}";
         await _orders.SaveChangesAsync();
 
         return ToDto(order);
@@ -64,17 +67,17 @@ public class OrdersService : IOrdersService
     private static OrdersDto ToDto(Order order) => new()
     {
         Id = order.Id,
-        Client_Id = order.Client_Id,
-        Order_Date = order.Order_Date,
-        Request_Date = order.Request_Date,
+        ClientId = order.ClientId,
+        OrderDate = order.OrderDate,
+        RequestDate = order.RequestDate,
         Reference = order.Reference,
-        Customer_Po_Number = order.Customer_Po_Number,
-        Order_Status = order.Order_Status,
-        Shipping_Notes = order.Shipping_Notes,
-        Warehouse_Id = order.Warehouse_Id,
-        Ship_To_Client_Id = order.Ship_To_Client_Id,
-        Bill_To_Client_Id = order.Bill_To_Client_Id,
-        Created_At = order.Created_At,
-        Updated_At = order.Updated_At
+        CustomerPoNumber = order.CustomerPoNumber,
+        OrderStatus = order.OrderStatus,
+        ShippingNotes = order.ShippingNotes,
+        WarehouseId = order.WarehouseId,
+        ShipToClientId = order.ShipToClientId,
+        BillToClientId = order.BillToClientId,
+        CreatedAt = order.CreatedAt,
+        UpdatedAt = order.UpdatedAt
     };
 }

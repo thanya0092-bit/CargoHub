@@ -8,14 +8,14 @@ public record SupplierDto
     public string Name { get; init; } = string.Empty;
     public string Address { get; init; } = string.Empty;
     public string City { get; init; } = string.Empty;
-    public string Zip_Code { get; init; } = string.Empty;
+    public string ZipCode { get; init; } = string.Empty;
     public string Province { get; init; } = string.Empty;
     public string Country { get; init; } = string.Empty;
-    public string Contact_Name { get; init; } = string.Empty;
-    public string Phone_Number { get; init; } = string.Empty;
+    public string ContactName { get; init; } = string.Empty;
+    public string PhoneNumber { get; init; } = string.Empty;
     public string Reference { get; init; } = string.Empty;
-    public DateTime Created_At { get; init; }
-    public DateTime Updated_At { get; init; }
+    public DateTime CreatedAt { get; init; }
+    public DateTime UpdatedAt { get; init; }
 }
 
 public record CreateSupplierDto
@@ -23,10 +23,10 @@ public record CreateSupplierDto
     public string Name { get; init; } = string.Empty;
     public string Address { get; init; } = string.Empty;
     public string City { get; init; } = string.Empty;
-    public string Zip_Code { get; init; } = string.Empty;
+    public string ZipCode { get; init; } = string.Empty;
     public string Province { get; init; } = string.Empty;
     public string Country { get; init; } = string.Empty;
-    public string Contact_Name { get; init; } = string.Empty;
-    public string Phone_Number { get; init; } = string.Empty;
+    public string ContactName { get; init; } = string.Empty;
+    public string PhoneNumber { get; init; } = string.Empty;
     public string Reference { get; init; } = string.Empty;
 }

@@ -33,14 +33,14 @@ public class ClientService : IClientService
             Name = dto.Name,
             Address = dto.Address,
             City = dto.City,
-            Zip_Code = dto.Zip_Code,
+            ZipCode = dto.ZipCode,
             Province = dto.Province,
             Country = dto.Country,
-            Contact_Name = dto.Contact_Name,
-            Contact_Phone = dto.Contact_Phone,
-            Contact_Email = dto.Contact_Email,
-            Created_At = now,
-            Updated_At = now
+            ContactName = dto.ContactName,
+            ContactPhone = dto.ContactPhone,
+            ContactEmail = dto.ContactEmail,
+            CreatedAt = now,
+            UpdatedAt = now
         };
 
         _clients.Add(client);
@@ -66,13 +66,13 @@ public class ClientService : IClientService
         Name = client.Name,
         Address = client.Address,
         City = client.City,
-        Zip_Code = client.Zip_Code,
+        ZipCode = client.ZipCode,
         Province = client.Province,
         Country = client.Country,
-        Contact_Name = client.Contact_Name,
-        Contact_Phone = client.Contact_Phone,
-        Contact_Email = client.Contact_Email,
-        Created_At = client.Created_At,
-        Updated_At = client.Updated_At
+        ContactName = client.ContactName,
+        ContactPhone = client.ContactPhone,
+        ContactEmail = client.ContactEmail,
+        CreatedAt = client.CreatedAt,
+        UpdatedAt = client.UpdatedAt
     };
 }

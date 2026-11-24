@@ -30,21 +30,24 @@ public class SupplierService : ISupplierService
         var now = DateTime.UtcNow;
         var supplier = new Supplier
         {
-            Code = $"SUP-000001",
+            Code = string.Empty,
             Name = dto.Name,
             Address = dto.Address,
             City = dto.City,
-            Zip_Code = dto.Zip_Code,
+            ZipCode = dto.ZipCode,
             Province = dto.Province,
             Country = dto.Country,
-            Contact_Name = dto.Contact_Name,
-            Phone_Number = dto.Phone_Number,
+            ContactName = dto.ContactName,
+            PhoneNumber = dto.PhoneNumber,
             Reference = dto.Reference,
-            Created_At = now,
-            Updated_At = now
+            CreatedAt = now,
+            UpdatedAt = now
         };
 
         _suppliers.Add(supplier);
+        await _suppliers.SaveChangesAsync();
+
+        supplier.Code = $"SUP-{supplier.Id:D6}";
         await _suppliers.SaveChangesAsync();
 
         return ToDto(supplier);
@@ -68,13 +71,13 @@ public class SupplierService : ISupplierService
         Name = supplier.Name,
         Address = supplier.Address,
         City = supplier.City,
-        Zip_Code = supplier.Zip_Code,
+        ZipCode = supplier.ZipCode,
         Province = supplier.Province,
         Country = supplier.Country,
-        Contact_Name = supplier.Contact_Name,
-        Phone_Number = supplier.Phone_Number,
+        ContactName = supplier.ContactName,
+        PhoneNumber = supplier.PhoneNumber,
         Reference = supplier.Reference,
-        Created_At = supplier.Created_At,
-        Updated_At = supplier.Updated_At
+        CreatedAt = supplier.CreatedAt,
+        UpdatedAt = supplier.UpdatedAt
     };
 }

@@ -29,10 +29,10 @@ public class OrderItemService : IOrderItemService
     {
         var orderItem = new OrderItem
         {
-            Order_Id = dto.Order_Id,
-            Item_Id = dto.Item_Id,
+            OrderId = dto.OrderId,
+            ItemId = dto.ItemId,
             Amount = dto.Amount,
-            Unit_Price = dto.Unit_Price
+            UnitPrice = dto.UnitPrice
         };
 
         _orderItems.Add(orderItem);
@@ -55,9 +55,9 @@ public class OrderItemService : IOrderItemService
     private static OrderItemDto ToDto(OrderItem orderItem) => new()
     {
         Id = orderItem.Id,
-        Order_Id = orderItem.Order_Id,
-        Item_Id = orderItem.Item_Id,
+        OrderId = orderItem.OrderId,
+        ItemId = orderItem.ItemId,
         Amount = orderItem.Amount,
-        Unit_Price = orderItem.Unit_Price
+        UnitPrice = orderItem.UnitPrice
     };
 }

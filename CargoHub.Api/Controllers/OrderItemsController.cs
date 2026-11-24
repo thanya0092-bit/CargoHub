@@ -6,11 +6,11 @@ namespace CargoHub.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class OrderItemController : ControllerBase
+public class OrderItemsController : ControllerBase
 {
     private readonly IOrderItemService _orderItems;
 
-    public OrderItemController(IOrderItemService orderItems)
+    public OrderItemsController(IOrderItemService orderItems)
     {
         _orderItems = orderItems;
     }
