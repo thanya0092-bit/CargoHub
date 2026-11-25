@@ -25,4 +25,18 @@ public class SuppliersController : ControllerBase
         var supplier = await _suppliers.GetByIdAsync(id);
         return supplier is null ? NotFound() : Ok(supplier);
     }
+
+    [HttpPost]
+    public async Task<ActionResult<SupplierDto>> Create(CreateSupplierDto dto)
+    {
+        var created = await _suppliers.CreateAsync(dto);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+        var deleted = await _suppliers.DeleteAsync(id);
+        return deleted ? NoContent() : NotFound();
+    }
 }

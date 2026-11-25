@@ -119,5 +119,57 @@ public static class SeedData
     
             await context.SaveChangesAsync();
         }
+
+        // Client
+        if (!await context.Clients.AnyAsync())
+        {
+            context.Clients.AddRange(
+                new Client
+                {
+                    Name = "AH Barendrecht",
+                    Address = "Kruispunt 1",
+                    City = "Barendrecht",
+                    ZipCode = "2991KK",
+                    Province = "Zuid-Holland",
+                    Country = "Netherlands",
+                    ContactName = "Jan Pieter",
+                    ContactPhone = "1111111112",
+                    ContactEmail = "JanPieter@gmail.com",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                },
+                new Client
+                {
+                    Name = "Dirk Barendrecht",
+                    Address = "Kruispunt 1",
+                    City = "Barendrecht",
+                    ZipCode = "2991KK",
+                    Province = "Zuid-Holland",
+                    Country = "Netherlands",
+                    ContactName = "Jan Pieter",
+                    ContactPhone = "1111111113",
+                    ContactEmail = "JanPieter@gmail.com",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                },
+                new Client
+                {
+                    Name = "Jumbo Barendrecht",
+                    Address = "Kruispunt 1",
+                    City = "Barendrecht",
+                    ZipCode = "2991KK",
+                    Province = "Zuid-Holland",
+                    Country = "Netherlands",
+                    ContactName = "Jan Pieter",
+                    ContactPhone = "1111111114",
+                    ContactEmail = "JanPieter@gmail.com",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
+            
+            );
+
+            await context.SaveChangesAsync();
+        }
     }
 }

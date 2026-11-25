@@ -19,10 +19,25 @@ public class ClientsController : ControllerBase
     public async Task<ActionResult<List<ClientDto>>> GetAll()
         => Ok(await _clients.GetAllAsync());
 
+
     [HttpGet("{id:int}")]
     public async Task<ActionResult<ClientDto>> GetById(int id)
     {
         var client = await _clients.GetByIdAsync(id);
         return client is null ? NotFound() : Ok(client);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<ClientDto>> Create(CreateClientDto dto)
+    {
+        var created = await _clients.CreateAsync(dto);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+        var deleted = await _clients.DeleteAsync(id);
+        return deleted ? NoContent() : NotFound();
     }
 }

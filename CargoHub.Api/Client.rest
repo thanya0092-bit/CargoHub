@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:5131
+
+### Get all clients
+GET {{baseUrl}}/api/clients
+
+### Get one client
+GET {{baseUrl}}/api/clients/3
+
+### Create a client
+POST {{baseUrl}}/api/clients
+Content-Type: application/json
+
+{
+  "Name": "Albert Heijn Barendrecht",
+  "Address": "Kruispunt 1",
+  "City": "Barendrecht",
+  "ZipCode": "2991KK",
+  "Province": "Zuid-Holland",
+  "Country": "Netherlands",
+  "ContactName": "Jan Pieter",
+  "ContactPhone": "1111111111",
+  "ContactEmail": "JanPieter@gmail.com"
+}
