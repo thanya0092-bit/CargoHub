@@ -1,4 +1,5 @@
 namespace CargoHub.Api.Dtos;
+
 public record ClientDto
 {
     public int Id { get; init; }

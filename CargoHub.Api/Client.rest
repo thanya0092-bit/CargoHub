@@ -21,3 +21,6 @@ Content-Type: application/json
   "ContactPhone": "1111111111",
   "ContactEmail": "JanPieter@gmail.com"
 }
+
+### Delete a client
+DELETE {{baseUrl}}/api/clients/3

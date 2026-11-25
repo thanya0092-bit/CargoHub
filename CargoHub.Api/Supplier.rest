@@ -1,0 +1,26 @@
+@baseUrl = http://localhost:5131
+
+### Get all suppliers
+GET {{baseUrl}}/api/suppliers
+
+### Get one supplier
+GET {{baseUrl}}/api/suppliers/3
+
+### Create a supplier
+POST {{baseUrl}}/api/suppliers
+Content-Type: application/json
+
+{
+  "Name": "Albert Heijn Barendrecht",
+  "Address": "Kruispunt 1",
+  "City": "Barendrecht",
+  "ZipCode": "2991KK",
+  "Province": "Zuid-Holland",
+  "Country": "Netherlands",
+  "ContactName": "Jan Pieter",
+  "PhoneNumber": "1111111111",
+  "Reference": "Coca Cola"
+}
+
+### Delete a supplier
+DELETE {{baseUrl}}/api/suppliers/4

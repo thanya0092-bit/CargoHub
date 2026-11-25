@@ -19,7 +19,6 @@ public class ClientsController : ControllerBase
     public async Task<ActionResult<List<ClientDto>>> GetAll()
         => Ok(await _clients.GetAllAsync());
 
-
     [HttpGet("{id:int}")]
     public async Task<ActionResult<ClientDto>> GetById(int id)
     {

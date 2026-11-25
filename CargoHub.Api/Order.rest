@@ -1,0 +1,24 @@
+@baseUrl = http://localhost:5131
+
+### Get all orders
+GET {{baseUrl}}/api/orders
+
+### Get one order
+GET {{baseUrl}}/api/orders/1
+
+### Create a order
+POST {{baseUrl}}/api/orders
+Content-Type: application/json
+
+{
+  "ClientId": 1,
+  "RequestDate": "2025-10-02T21:47:34Z",
+  "CustomerPoNumber": "PO-256238",
+  "ShippingNotes": "Vries- en koelgoed gescheiden lossen",
+  "WarehouseId": 1,
+  "ShipToClientId": 2,
+  "BillToClientId": 3
+}
+
+### Delete a order
+DELETE {{baseUrl}}/api/orders/1

@@ -32,7 +32,7 @@ public class OrdersService : IOrdersService
         {
             ClientId = dto.ClientId,
             OrderDate = now,
-            RequestDate = DateTime.SpecifyKind(dto.RequestDate, DateTimeKind.Utc), //Markeer de datum als UTC anders weigert postgres
+            RequestDate = dto.RequestDate,
             Reference = string.Empty,
             CustomerPoNumber = dto.CustomerPoNumber,
             OrderStatus = "Pending",
@@ -47,6 +47,7 @@ public class OrdersService : IOrdersService
         _orders.Add(order);
         await _orders.SaveChangesAsync();
 
+        // id word pas na het opslaan aangemaakt daarna word kan reference pas worden aangemaakt
         order.Reference = $"ORD-{order.Id:D6}";
         await _orders.SaveChangesAsync();
 

@@ -166,7 +166,122 @@ public static class SeedData
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow
                 }
-            
+            );
+
+            await context.SaveChangesAsync();
+        }
+
+        // Order
+        if (!await context.Orders.AnyAsync())
+        {
+            context.Orders.AddRange(
+                new Order
+                {
+                    ClientId = 1,
+                    OrderDate = new DateTime(2025, 2, 19, 22, 56, 43, DateTimeKind.Utc),
+                    RequestDate = new DateTime(2025, 2, 22, 11, 31, 51, DateTimeKind.Utc),
+                    Reference = "ORD-000001",
+                    CustomerPoNumber = "PO-984166",
+                    OrderStatus = "Pending",
+                    ShippingNotes = null,
+                    WarehouseId = 1,
+                    ShipToClientId = 2,
+                    BillToClientId = 3,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                },
+                new Order
+                {
+                    ClientId = 2,
+                    OrderDate = new DateTime(2025, 2, 19, 22, 56, 43, DateTimeKind.Utc),
+                    RequestDate = new DateTime(2025, 2, 22, 11, 31, 51, DateTimeKind.Utc),
+                    Reference = "ORD-000002",
+                    CustomerPoNumber = "PO-984166",
+                    OrderStatus = "Pending",
+                    ShippingNotes = null,
+                    WarehouseId = 1,
+                    ShipToClientId = 2,
+                    BillToClientId = 3,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
+            );
+
+            await context.SaveChangesAsync();
+        }
+
+        // OrderItem
+        if (!await context.OrderItems.AnyAsync())
+        {
+            context.OrderItems.AddRange(
+                new OrderItem
+                {
+                    OrderId = 1,
+                    ItemId = 82,
+                    Amount = 24,
+                    UnitPrice = 21.34m
+                },
+                new OrderItem
+                {
+                    OrderId = 2,
+                    ItemId = 478,
+                    Amount = 69,
+                    UnitPrice = 10.4m
+                }
+            );
+
+            await context.SaveChangesAsync();
+        }
+
+        // Supplier
+        if (!await context.Suppliers.AnyAsync())
+        {
+            context.Suppliers.AddRange(
+                new Supplier
+                {
+                    Code = "SUP-000001",
+                    Name = "FrieslandCampina Nederland B.V.",
+                    Address = "Dinaweg 1",
+                    City = "Amsterdam",
+                    ZipCode = "3662LP",
+                    Province = "Limburg",
+                    Country = "Netherlands",
+                    ContactName = "Gerda de Heer",
+                    PhoneNumber = "1111111111",
+                    Reference = "Campina",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                },
+                new Supplier
+                {
+                    Code = "SUP-000002",
+                    Name = "FrieslandCampina Nederland B.V.",
+                    Address = "Dinaweg 1",
+                    City = "Amsterdam",
+                    ZipCode = "3662LP",
+                    Province = "Limburg",
+                    Country = "Netherlands",
+                    ContactName = "Gerda de Heer",
+                    PhoneNumber = "1111111111",
+                    Reference = "Campina",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                },
+                new Supplier
+                {
+                    Code = "SUP-000003",
+                    Name = "FrieslandCampina Nederland B.V.",
+                    Address = "Dinaweg 1",
+                    City = "Amsterdam",
+                    ZipCode = "3662LP",
+                    Province = "Limburg",
+                    Country = "Netherlands",
+                    ContactName = "Gerda de Heer",
+                    PhoneNumber = "1111111111",
+                    Reference = "Campina",
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                }
             );
 
             await context.SaveChangesAsync();

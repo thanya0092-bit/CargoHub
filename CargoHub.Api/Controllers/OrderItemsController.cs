@@ -34,7 +34,7 @@ public class OrderItemsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<ActionResult> Delete(int id)
     {
         var deleted = await _orderItems.DeleteAsync(id);
         return deleted ? NoContent() : NotFound();

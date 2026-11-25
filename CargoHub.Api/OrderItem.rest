@@ -1,0 +1,21 @@
+@baseUrl = http://localhost:5131
+
+### Get all order items
+GET {{baseUrl}}/api/orderitems
+
+### Get one order item
+GET {{baseUrl}}/api/orderitems/1
+
+### Create an order item
+POST {{baseUrl}}/api/orderitems
+Content-Type: application/json
+
+{
+  "OrderId": 1,
+  "ItemId": 1,
+  "Amount": 5,
+  "UnitPrice": 12.50
+}
+
+### Delete a order
+DELETE {{baseUrl}}/api/orderitems/3
